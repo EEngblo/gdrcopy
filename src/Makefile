@@ -63,7 +63,7 @@ $(LIB): $(LIBOBJS)
 
 # special-cased to finely tune the arch option
 memcpy_avx.o: memcpy_avx.c
-	$(COMPILE.c) -mavx -o $@ $^
+	$(COMPILE.c) -mavx -march=cascadelake -o $@ $^
 
 memcpy_sse.o: memcpy_sse.c
 	$(COMPILE.c) -msse -o $@ $^
